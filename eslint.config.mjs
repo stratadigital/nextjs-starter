@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Catalyst UI Kit — third-party components, not linted (do not edit).
+    "src/components/ui/**",
   ]),
 ]);
 
