@@ -16,23 +16,28 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - **Styling**: Tailwind CSS v4
 - **UI Components**: Catalyst UI Kit (Tailwind Labs) — components in `src/components/ui/`
 - **Fonts**: Geist / Geist Mono via `next/font/google` (configured in `src/app/layout.tsx`)
-- **Contact Forms**: Web3Forms — access key required in `.env.local`
+- **Contact Forms / Email**: Resend — API key required in `.env.local`
 - **Code Formatting**: Prettier with `prettier-plugin-tailwindcss` (auto-sorts Tailwind class names)
 - **Linting**: ESLint with Next.js rules + `eslint-config-prettier`
 
 ## Folder Structure
+
+What ships with the template:
 
 ```
 src/
   app/                  # Next.js App Router pages and layouts
   components/
     ui/                 # Catalyst UI Kit components (do not edit these)
-    layout/             # Site-wide layout components (Navbar, Footer, etc.)
-    sections/           # Page section components (Hero, Features, CTA, etc.)
-  lib/                  # Utility functions and shared logic
-  hooks/                # Custom React hooks
-  types/                # TypeScript type definitions
 ```
+
+Create these as the site needs them — keep to this convention:
+
+- `src/components/layout/` — site-wide layout components (Navbar, Footer, etc.)
+- `src/components/sections/` — page section components (Hero, Features, CTA, etc.)
+- `src/lib/` — utility functions and shared logic
+- `src/hooks/` — custom React hooks
+- `src/types/` — TypeScript type definitions
 
 ## Catalyst UI Components Available
 
@@ -55,7 +60,9 @@ Catalyst depends on: `@headlessui/react`, `motion`, `clsx` (all installed).
 
 | Variable | Purpose |
 |---|---|
-| `WEB3FORMS_ACCESS_KEY` | Web3Forms contact form key |
+| `RESEND_API_KEY` | Resend API key for sending email |
+| `CONTACT_EMAIL_TO` | Address that receives contact form submissions |
+| `CONTACT_EMAIL_FROM` | Verified sender address (domain must be verified in Resend) |
 
 See `.env.example` for the full list. Copy to `.env.local` and fill in values.
 
